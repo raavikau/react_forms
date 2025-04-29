@@ -18,14 +18,19 @@ function Event() {
     }
 
     function handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault(); // to stop reload page
         setHeading(fnameText);
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <h1>Hello {headingText}</h1>
-            <input onChange={handleChange} type="text" placeholder="What is your first name?" value={fnameText}/>
+            <input 
+                onChange={handleChange}
+                type="text" 
+                placeholder="What is your first name?" 
+                value={fnameText}
+            />
             <button 
                 style = {{ backgroundColor: isMouseOver ? "black" : "white" }}
                 onMouseOver={handleMouseOver}
