@@ -1,16 +1,17 @@
 import React from "react";
+import Input from "./Input";
 var isRegistered = false;
 
-function ConditionalForm() {
+function ConditionalForm(props) {
     return (
         <form>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
-            {isRegistered === false && (
-                <input type="password" placeholder="Confirm Password" />
+            <Input type="text" placeholder="Username" />
+            <Input type="password" placeholder="Password" />
+            { isRegistered === false && (
+                <Input type="password" placeholder="Confirm Password" />
             )}
             <button type="submit">
-                { isRegistered? "Login" : "Register" }
+                { isRegistered ? "Login" : "Register" }
             </button>
         </form>
     );
