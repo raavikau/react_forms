@@ -3,29 +3,33 @@ import React, { useState } from "react";
 function ComplexState() {
     const [setContact, submitContact] = useState({fname:"", lname:"", email:""});
     function handleChange(event) {
-        const newValue = event.target.value;
-        const inputName = event.target.name;
-        submitContact((previous)=>{
-            if (inputName === "fname"){
-                return {
-                    fname:newValue,
-                    lname:previous.lname,
-                    email:previous.email
-                }
-            } else if (inputName === "lname") {
-                return {
-                    fname:previous.fname,
-                    lname:newValue,
-                    email:previous.email
-                }
-            } else if (inputName === "email") {
-                return {
-                    fname:previous.fname,
-                    lname:previous.lname,
-                    email:newValue
-                }
-            }
-        })
+        const {name, value} = event.target;
+        // submitContact((previous)=>{
+        //     if (inputName === "fname"){
+        //         return {
+        //             fname:newValue,
+        //             lname:previous.lname,
+        //             email:previous.email
+        //         };
+        //     } else if (inputName === "lname") {
+        //         return {
+        //             fname:previous.fname,
+        //             lname:newValue,
+        //             email:previous.email
+        //         };
+        //     } else if (inputName === "email") {
+        //         return {
+        //             fname:previous.fname,
+        //             lname:previous.lname,
+        //             email:newValue
+        //         };
+        //     }
+        // });
+
+        // you can use this ES6 optimize code instead of above submitContact function
+        submitContact((previousvalue)=> {
+            return { ...previousvalue, [name]:value };
+        });
         
     }
     return (
