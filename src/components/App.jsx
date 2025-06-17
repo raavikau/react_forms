@@ -7,8 +7,8 @@ var userIsRegistered = false;
 function App() {
     return (
         <div className="container">
-            {/* <Event />
-            <ConditionalForm isRegistered = {userIsRegistered} /> */}
+            <Event />
+            <ConditionalForm isRegistered = {userIsRegistered} />
             <ComplexState />
         </div>
     );
