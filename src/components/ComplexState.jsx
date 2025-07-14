@@ -27,11 +27,11 @@ function ComplexState() {
         //     }
         // });
 
-        // you can use this ES6 optimize code with spread operator instead of above submitContact function
-        setContact((previousvalue)=> {  //give all previous values // key as [name]
+        // you can use this ES6 optimize code with spread operator instead of above setContact function
+        setContact((previousvalue)=> {  // give all previous values 
             return { 
                 ...previousvalue,
-                 [name]:value
+                 [name]:value  // [name] as key in dict
             };
         });
         
