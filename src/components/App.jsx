@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="container">
             <Event />
-            <ConditionalForm isRegistered = {userIsRegistered} />
+            <ConditionalForm isRegistered = {userIsRegistered}/>
             <ComplexState />
         </div>
     );
